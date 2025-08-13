@@ -1,0 +1,50 @@
+@host = http://localhost:5500/api/v1
+
+// Get all stations
+GET {{host}}/station
+
+### 
+// Get station by id
+GET {{host}}/station/682374b6040cc63598bc05ce
+
+###
+// PUT station by id
+PUT {{host}}/station/689b20b8d8aee1407d01ee82
+content-type: application/json
+
+{  
+      "name": "Station2",
+      "location": "Ramat Gan",
+      "chargingStations": [
+        {
+          "id": "120",
+          "name": "station1",
+          "location": "Ruppin",
+          "chargingTypes": "fast charging"
+        }
+      ]
+
+}
+
+###
+// POST a new station
+POST {{host}}/station
+content-type: application/json
+
+{
+  
+  "name": "Station",
+  "location": "Hedera",  
+  "chargingStations" : [
+    {
+      "id" : "1234" ,
+      "name" : "Station 1",
+      "location" : "Hedera",
+      "chargingTypes" : "fast charging"
+    }
+  ]      
+}
+
+###
+DELETE {{host}}/station/689b20b8d8aee1407d01ee82
+###

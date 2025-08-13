@@ -1,0 +1,55 @@
+@host = http://localhost:5500/api/v1
+GET {{host}}/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODBhMDEyMjFmNzA3ZDUxMWI4NDBjYWEiLCJyb2xlIjoidXNlciIsIm5hbWUiOiJNb3NlcyIsImVtYWlsIjoibW9zZXNAZ29kLmlsIiwiaWF0IjoxNzQ1NDg2OTQ1LCJleHAiOjE3NDU0OTA1NDV9.YoR2Vl17255LvoFYPl9PIeO7wCwiMJudD_3QX5q0WvM
+
+###
+
+
+
+// Add User Default Role: User
+POST {{host}}/users 
+content-type: application/json
+
+{
+    "name": "yahya",
+    "email": "yahya@gmail.com",
+    "password": "yahya123"
+}
+
+###
+POST {{host}}/users 
+content-type: application/json
+
+{
+   "name": "Mohmed234",
+    "email": "Mohmed@gmail.com",
+    "password": "Mohmed123",
+    "role":"admin"
+}
+
+###
+
+POST {{host}}/users/login
+content-type: application/json
+
+{
+    "email": "Mohmed@gmail.com",
+    "password": "Mohmed123"
+}
+###
+// PUT User by id
+PUT {{host}}/users/689a0664dc4d3130832836e8
+content-type: application/json
+
+{
+    "name": "yahya1",
+    "email": "yahya@gmail.com" ,
+    "password": "12345678",
+    "role": "user"
+}
+
+###
+// DELETE User by id
+DELETE {{host}}/users/689b14538f7337199912fec0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODA5ZjlhNDNkYzU0ZTYyOTFjN2Q1Y2QiLCJyb2xlIjoiYWRtaW4iLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlhdCI6MTc0NTQ4NzM5NiwiZXhwIjoxNzQ1NDkwOTk2fQ.uraWmUwSBUfthG1huQClq8oL7HPBY3fyA3Cwo9iulu0
+###

@@ -1,0 +1,42 @@
+@host = http://localhost:5500/api/v1
+// GET All Drivers
+GET {{host}}/driver
+
+###
+
+// GET Driver by email if exists
+GET {{host}}/driver/Driver@gmail.com
+###
+// GET Driver by id
+GET {{host}}/driver/682373842df92047353160b9
+
+
+###
+// PUT Driver by id
+PUT {{host}}/driver/689a255a707edc63a33f9dc4
+content-type: application/json
+
+{   
+       "fullName": "mohmed12e",
+    "email": "mohmed@gmail.com",
+  "phone": "0512345678",
+    "DOB": "2002-01-02" 
+}
+###
+
+
+// POST Driver add new driver
+POST {{host}}/driver
+content-type: application/json
+
+{
+   
+  "fullName": "mohmed12",
+    "email": "mohmed123@gmail.com",
+  "phone": "0512345678",
+    "DOB": "2002-01-02" 
+}
+
+###
+// DELETE Driver by id 
+DELETE {{host}}/driver/2

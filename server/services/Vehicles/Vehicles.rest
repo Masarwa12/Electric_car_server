@@ -1,0 +1,38 @@
+
+@host = http://localhost:5500/api/v1
+
+// GET All vehicles
+GET {{host}}/vehicle
+
+###
+// GET Vehicle by id
+GET {{host}}/vehicle/689b1a61b6df8c0f88662f16
+
+###
+
+// PUT Vehicle by id
+PUT {{host}}/vehicle/682375a921e64f2432af8fd1
+content-type: application/json
+
+{   
+      "NameVehicle": "hyundai",
+      "modelVehicle": "IONIQ 6",
+      "typeVehicle": "C-SUV",
+      "yearVehicle": " 2024"
+}
+###
+// POST Vehicle add new vehicle
+POST {{host}}/vehicle
+content-type: application/json
+
+{
+      "NameVehicle": "hyundai",
+      "modelVehicle": "IONIQ 6",
+      "typeVehicle": "C-SUV",
+      "yearVehicle": " 2024"
+}
+
+###
+// DELETE vehicle by id 
+DELETE {{host}}/vehicle/6823758b21e64f2432af8fd0
+
